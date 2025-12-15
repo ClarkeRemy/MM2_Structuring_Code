@@ -1,5 +1,11 @@
 # MORK/MM2 : Structuring Code
 
+The tutorial requires a `mork` binary from the kernel crate in the [__MORK__](https://github.com/trueagi-io/MORK).
+
+It require a nighly compiler of Rust.
+
+An important dependancy is [__PathMap__](https://github.com/Adam-Vandervorst/PathMap/tree/master). (in [_crates.io_](https://crates.io/crates/pathmap))
+
 The following is a mirror of file `structuring_code/structuring_code_00_Intro_and_Contents.md`
 
 ----
