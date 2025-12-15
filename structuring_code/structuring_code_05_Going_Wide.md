@@ -74,8 +74,7 @@ We can try the truth tables with an exec to find all ways to compute `1` with ev
     (, (results-in 1 <- $expr))
 )
 ```
-run `./mork run Going_Wide_01.mm2`
-
+run `./mork run Going_Wide_01_Finite_Function.mm2`
 The results:
 ```
 (results-in 1 <- (1))
