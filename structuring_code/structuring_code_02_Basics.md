@@ -140,7 +140,7 @@ Have a look at the contents of the following files:
 
 Try to guess which exec will remain.
 
-run them with `./mork run --steps 0 <FILE_NAME>`.
+run them with `./mork run --steps 0 "<FILE_NAME>"`. _(the quotes are required for the parenthesis)_
 
 Compare your expectations with the outputs.
 
