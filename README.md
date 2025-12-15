@@ -8,6 +8,11 @@ An important dependancy is [__PathMap__](https://github.com/Adam-Vandervorst/Pat
 
 The following is a mirror of file `structuring_code/structuring_code_00_Intro_and_Contents.md`
 
+
+Consider reading these pages from the MORK [wiki](https://github.com/trueagi-io/MORK/wiki):
+- [Getting started](https://github.com/trueagi-io/MORK/wiki/Getting-started)
+- [_Data in MORK_](https://github.com/trueagi-io/MORK/wiki/Data-in-MORK)
+
 ----
 
 This tutorial aims to walk through how a program can be constructed in MM2, focusing on small examples and building up to a non trivial program. The program is then further modified to scale to larger more involved programming.
