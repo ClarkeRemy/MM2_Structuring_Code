@@ -66,6 +66,29 @@ What follows are truth tables.
 (eval (0) -> 0)
 (eval (1) -> 1)
 ```
+
+We can try the truth tables with an exec to find all ways to compute `1` with eval
+```
+(exec 0 
+    (, (eval $expr -> 1))
+    (, (results-in 1 <- $expr))
+)
+```
+run `./mork run Going_Wide_01.mm2`
+
+The results:
+```
+(results-in 1 <- (1))
+(results-in 1 <- (not 0))
+(results-in 1 <- (if 0 0))
+(results-in 1 <- (if 0 1))
+(results-in 1 <- (if 1 1))
+(results-in 1 <- (or 0 1))
+(results-in 1 <- (or 1 0))
+(results-in 1 <- (or 1 1))
+(results-in 1 <- (and 1 1))
+```
+
 We are going to use these to evaluate the tree bottom up.
 If we can expose any number of expressions in this shape, we can process them in bulk.
 
@@ -241,53 +264,6 @@ Still we will see later that using the `O` sink we can remove expressions that w
 We now have a representation we can target, to exploit processing wide, layer by layer.
 But to process layer by layer we are going to have to formulate our recursion (and ensure it terminates).
 
-Making an infinite loop is not very hard, we just need the exec that keeps constructing itself
-```
-(exec 0 (, (exec 0 $p $t) )
-        (, (exec 0 $p $t) )
-)
-```
-run `./mork run --steps 0 Going_Wide_01_Recursive.mm2`
-
-This exec unifies with itself ....
-```
-MGU : {
-   $p0 => (, (exec 0 $p1 $t1) )
-   $t0 => (, (exec 0 $p1 $t1) )
-}
-```
-then templates itself.
-```
-(, (exec 0 $p0 $t0) )
-=>
-(, (exec 0 (, (exec 0 $p1 $t1) ) (, (exec 0 $p1 $t1) )) )
-```
-We get the same exec back.
-
-The issue is that we want this to halt. We can do this by making it fail to match.  
-We do so below by decrementing a counter (here with Peano arithmetic).
-```
-(counter (S (S (S Z))))
-(exec LOOP (, (counter (S $N))
-              (exec LOOP $p $t)
-           )
-           (O  (+ (exec LOOP $p $t)   ) 
-               (+ (counter $N)     )
-               (- (counter (S $N)) )
-           )
-)
-```
-run `./mork run --steps 0 Going_Wide_02_Halts.mm2`
-you should find this
-```
-(counter (S (S Z)))
-(exec LOOP (, (counter (S $a)) (exec LOOP $b $c)) (O (+ (exec 0 $b $c)) (+ (counter $a)) (- (counter (S $a)))))
-```
-the counter decremented by one Peano successor.
-
-When the match fails at `(counter Z)`, the exec will be exhausted without making any writes, so it wont write itself back
-
-
 We just need one more piece; we need to turn our INPUT in a form that is in the Path-Context representation.  
 We will need to _fork_ our expressions in order to use our evaluation code to _join_ them.
 
@@ -438,7 +414,7 @@ When all the other execs have run, we reset the main loop when the conditions ho
 The `(RESET)` must have lower priority than `(TERM)`, and our forks and joins (it does).
 
 let's run the full program.
-run `./mork run Going_Wide_03.mm2`
+run `./mork run Going_Wide_02.mm2`
 Looking at the result we should find
 ```
 (OUTPUT 1)

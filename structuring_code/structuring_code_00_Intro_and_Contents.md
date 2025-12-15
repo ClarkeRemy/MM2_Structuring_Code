@@ -101,18 +101,16 @@ If one wants to jump right in, head to `structuring_code_00_Intro_and_Contents.m
     - | `Control_Select_First_Exec.mm2`
       - Runs one exec, removing other execs that would match the data.
     - | `Control_Recursive.mm2`
-      - a minimal exec that spawns itself.
+      - The most basic exec that constructs itself.
     - | `Control_Halts_on_fail.mm2`
-      - A loop that terminates on match failure.
+      - A recursive exec that eventually fails when decrementing a Peano number to match, ending the recursion.
     - | `Control_Halts_on_success.mm2`
-      - a loop that terminates when one of the execs it spawns finally succeeds to match
+      - A loop that terminates when one of the execs it spawns finally succeeds to match
 
   - Going Wide
-    - | `Going_Wide_01_Recursive.mm2`
-      - The most basic exec that constructs itself.
-    - | `Going_Wide_02_Halts.mm2`
-      - A recursive exec that eventually fails when decrementing a Peano number to match, ending the recursion.
-    - | `Going_Wide_03.mm2`
+    - `Going_Wide_01_Finite_Function.mm2`
+      - Testing the truth tables for our `eval` of booleans.
+    - | `Going_Wide_02.mm2`
       - A program that takes a recursive expression, splits it into paths, then evaluates with by joining results with a finite function
     - | `Going_Wide_11_Macros.mm2`
       - A modified `Going_Wide_03.mm2` by using using partial evaluation to allow the forks and joins to be generic, but specialize them before the main loop.
