@@ -4,33 +4,33 @@
 
 We have two `.mm2` files. 
 
-`Basics_file1.mm2`
+`Basics_01_file1.mm2`
 ```
 a
 b
 ```
 
-`Basics_file2.mm2`
+`Basics_02_file2.mm2`
 ```
 b
 c
 ```
 
-We decide to manually concatenate them to have the contents of both files
+We decide to manually concatenate them to have the contents of both files.
 
-`Basics_file1_file2.mm2`
+`Basics_03_file1_file2.mm2`
 ```
-; from `Basics_file1.mm2`
+; from `Basics_01_file1.mm2`
 a
 b
 
-; from `Basics_file2.mm2`
+; from `Basics_02_file2.mm2`
 b
 c
 ```
-run `./mork run Basics_file1_file2.mm2` 
+run `./mork run Basics_03_file1_file2.mm2` 
 
-we get:
+We get the following:
 ```
 a
 b
@@ -42,17 +42,17 @@ This may be the desired behavior, but often one would like to ensure that the se
 This would require a form of _predication_.
 
 We can do this simply by adding a prefix.
-`Basics_file1_file2_predicated.mm2`
+`Basics_04_file1_file2_predicated.mm2`
 ```
-; from `Basics_file1.mm2`
+; from `Basics_01_file1.mm2`
 (file1 a)
 (file1 b)
 
-; from `Basics_file2.mm2`
+; from `Basics_02_file2.mm2`
 (file2 b)
 (file2 c)
 ```
-run `./mork run Basics_file1_file2_predicated.mm2` 
+run `./mork run Basics_04_file1_file2_predicated.mm2` 
 We still end up with a set union, but they remain disjoint.
 ```
 (file1 a)
@@ -64,7 +64,7 @@ We still end up with a set union, but they remain disjoint.
 We use predication of `file1` or `file2` to project out what we want.  
 We will try this with an exec (the details of execs explored later).
 
-`Basics_file1_file2_project.mm2`
+`Basics_05_file1_file2_project.mm2`
 ```
 ; from `file1.mm2`
 (file1 a)
@@ -79,7 +79,7 @@ We will try this with an exec (the details of execs explored later).
     (, (projected $x) )
 )
 ```
-run `./mork run Basics_file1_file2_project.mm2`
+run `./mork run Basics_05_file1_file2_project.mm2`
 
 we get this.
 ```
@@ -131,12 +131,12 @@ The basic idea is that we can order priority like below :
 - Low arity Tuple > High Arity Tuple > Short Symbol > Long Symbol
 
 Have a look at the contents of the following files:
-- `Basics_Priority_0_1.mm2`
-- `Basics_Priority_0_(0_0).mm2`
-- `Basics_Priority_(1)_(0 0).mm2`
-- `Basics_Priority_(0_0)_(0_1).mm2`
-- `Basics_Priority_1_00.mm2`
-- `Basics_Priority_00_01.mm2`
+- `Basics_06_Priority_0_1.mm2`
+- `Basics_06_Priority_0_(0_0).mm2`
+- `Basics_06_Priority_(1)_(0 0).mm2`
+- `Basics_06_Priority_(0_0)_(0_1).mm2`
+- `Basics_06_Priority_1_00.mm2`
+- `Basics_06_Priority_00_01.mm2`
 
 Try to guess which exec will remain.
 
@@ -176,7 +176,7 @@ Say we had this space :
    (, (ab $x $y)    )
 )
 ```
-run `./mork run Basics_Sources_Sinks.mm2`
+run `./mork run Basics_07_Sources_Sinks.mm2`
 
 When the exec is run the sources would generate these bindings: 
 - `{ { $x => 1, $y => 3}, { $x => 2, $y => 3} }`
@@ -214,7 +214,7 @@ The `-` action is particularly useful, but use with care, it's behavior is non-m
 a
 b
 ```
-run `./mork run Basics_Sink_Removal.mm2`
+run `./mork run Basics_08_Sink_Removal.mm2`
 
 it should output this
 ```

@@ -80,21 +80,23 @@ If one wants to jump right in, head to `structuring_code_00_Intro_and_Contents.m
       - A basic file to see if the tutorial environment is set up.
 
   - Basics
-    - | `Basics_file1.mm2`  
-      | `Basics_file2.mm2`  
-      | `Basics_file1_file2.mm2`  
-      | `Basics_file1_file2_project.mm2`  
-      | `Basics_file1_file2_predication.mm2`  
+    - | `Basics_01_file1.mm2`  
+      | `Basics_02_file2.mm2`  
+      | `Basics_03_file1_file2.mm2`  
+      | `Basics_04_file1_file2_predicated.mm2`  
+      | `Basics_05_file1_file2_project.mm2`  
       - Examples showing the behavior of loading a file, and motivating predication.
-    - | `Basics_Priority_0_1.mm2`  
-      | `Basics_Priority_1_00.mm2`  
-      | `Basics_Priority_00_01.mm2`  
-      | `Basics_Priority_0_(0_0).mm2`  
-      | `Basics_Priority_(1)_(0_0).mm2`  
-      | `Basics_Priority_(0_0)_(0_1).mm2`  
+    - | `Basics_06_Priority_0_1.mm2`  
+      | `Basics_06_Priority_1_00.mm2`  
+      | `Basics_06_Priority_00_01.mm2`  
+      | `Basics_06_Priority_0_(0_0).mm2`  
+      | `Basics_06_Priority_(1)_(0_0).mm2`  
+      | `Basics_06_Priority_(0_0)_(0_1).mm2`  
       - Examples to see what order execs run in.
-    - `Basics_Sources_Sinks.mm2`  
-      - A basic example to showcase pattern sources and template sinks.
+    - | `Basics_07_Sources_Sinks.mm2`  
+      | `Basics_08_Sink_Removal.mm2`  
+      - A basic examples to showcase pattern sources and template sinks.
+
 
   - Set Operations
     - | `Set_Ops_01_Hardcoded_Locations.mm2`
@@ -108,23 +110,23 @@ If one wants to jump right in, head to `structuring_code_00_Intro_and_Contents.m
       - Examples that used the parameterized location pattern to implement set operations.
   
   - Control
-    - | `Control_Priority_Seq.mm2`
+    - | `Control_01_Priority_Seq.mm2`
       - A collection of execs that run in the order of the priority from 0 to 3 (inclusive)
-    - | `Control_Exec_Chaining_Seq.mm2`
+    - | `Control_02_Exec_Chaining_Seq.mm2`
       - Execs that run one after another by spawning the next to run.
-    - | `Control_Exec_Chaining_Fail_Seq.mm2`
+    - | `Control_03_Exec_Chaining_Fail_Seq.mm2`
       - An exec chain that fails to match after the first step.
-    - | `Control_Select_b_c.mm2`
+    - | `Control_04_Select_b_c.mm2`
       - Runs execs only execs that match the space.
-    - | `Control_Select_First_Data.mm2`
+    - | `Control_05_Select_First_Data.mm2`
       - Runs one exec, removing the data that would cause other execs to match.
-    - | `Control_Select_First_Exec.mm2`
+    - | `Control_06_Select_First_Exec.mm2`
       - Runs one exec, removing other execs that would match the data.
-    - | `Control_Recursive.mm2`
+    - | `Control_07_Recursive.mm2`
       - The most basic exec that constructs itself.
-    - | `Control_Halts_on_fail.mm2`
+    - | `Control_08_Halts_on_fail.mm2`
       - A recursive exec that eventually fails when decrementing a Peano number to match, ending the recursion.
-    - | `Control_Halts_on_success.mm2`
+    - | `Control_09_Halts_on_success.mm2`
       - A loop that terminates when one of the execs it spawns finally succeeds to match
 
   - Going Wide

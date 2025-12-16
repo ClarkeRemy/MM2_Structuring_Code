@@ -1,7 +1,7 @@
 # Getting set up
 
 ## using MORK via the CLI
-The tutorial is to uses the MORK CLI by compiling the MORK kernel binary.
+The tutorial uses the MORK CLI by compiling the MORK kernel binary.
 run `cargo build --release` in `./kernel` in the mork git repository with a nightly compiler `rustup toolchain install nightly`.
 
 see [Getting-Started](https://github.com/trueagi-io/MORK/wiki/Getting-started)
@@ -28,7 +28,7 @@ Options:
 Run `mork run <INPUT_PATH>` :  input a file; output to stdout.  
 Run `mork run <INPUT_PATH> [OUTPUT_PATH]` : input a file; output a file.
 
-For the tutorial make a copy of the `mork` binary executable into the `structuring_code/mm2_programs` folder.
+For the tutorial make a copy of the `mork` binary executable and place it into the `structuring_code/mm2_programs` folder.  
 The tutorial will from time to time ask you to run a `./mork run` from with `structuring_code/mm2_programs` as the current directory.
 
 There is a file `structuring_code/Setup_Hello_World.mm2`, here are the contents.
@@ -58,4 +58,4 @@ __Note__ : It actually ran _one_ step with the `--steps 0`
 
 ----
 
-Next basics are introduced `structuring_code_02_Basics.md`
+Next, basics are introduced `structuring_code_02_Basics.md`.

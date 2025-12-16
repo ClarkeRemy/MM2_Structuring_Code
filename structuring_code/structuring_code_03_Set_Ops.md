@@ -94,7 +94,7 @@ Unification either fails to match, or succeeds to find the "Most General Unifier
 The MGU is a substitution set that if applied to either argument will
 result in the same value.
 
-Let's examine some example arguments and results
+Let's examine some example arguments and results.
 ```
 unify : (1 2) (1 2)
 MGU   : {}
@@ -164,7 +164,7 @@ MGU
 }
 ```
 We see what `$p` and `$t` are now.
-Lets now substitute the exec's template
+Lets now substitute the exec's template.
 ```
 ; substitute $p and $t
 (exec 0 $p $t)
@@ -212,7 +212,7 @@ Union was explained above.
 )
 
 ```
-The exec using the definition.
+The exec using the definition..
 ```
 (exec 0 (, ((union (arg_a arg_b) -> ret) $p $t) )
         (, (exec 0 $p $t) )
@@ -240,7 +240,7 @@ For intersection we need to have the __constraint__ that both argument elements 
     (, ($out $a) )
 )
 ```
-The exec using the definition.
+The exec using the definition..
 ```
 (exec 0 (, ((intersection (arg_a arg_b) -> ret) $p $t) )
         (, (exec 0 $p $t) )
@@ -267,7 +267,7 @@ The right argument will remove from the left. We are going to need to use the `O
     )
 )
 ```
-The exec using the definition.
+The exec using the definition..
 ```
 (exec 0 (, ((difference (arg_a arg_b) -> ret) $p $t) )
         (, (exec 0 $p $t) )
@@ -295,7 +295,7 @@ Symmetric difference could be implemented by computing the union, and the inters
     )
 )
 ```
-the exec using the definition
+The exec using the definition.
 ```
 (exec 0 (, ((symmetric-difference (arg_a arg_b) -> ret) $p $t) )
         (, (exec 0 $p $t) )
@@ -303,7 +303,7 @@ the exec using the definition
 ```
 run `./mork run Set_Ops_06_Symmetric_Difference.mm2`
 
-after consuming the exec, it will leave behind these new values
+After consuming the exec, it will leave behind these new values.
 ```
 (ret a)
 (ret d)

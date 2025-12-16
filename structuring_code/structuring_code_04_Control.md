@@ -31,10 +31,10 @@ Each has been hardcoded to write out their priorities when they successfully exe
 
 run for all steps in 0 to 3 inclusive
 ```sh
-./mork run --steps 0 Control_Priority_Seq.mm2
-./mork run --steps 1 Control_Priority_Seq.mm2
-./mork run --steps 2 Control_Priority_Seq.mm2
-./mork run --steps 3 Control_Priority_Seq.mm2
+./mork run --steps 0 Control_01_Priority_Seq.mm2
+./mork run --steps 1 Control_01_Priority_Seq.mm2
+./mork run --steps 2 Control_01_Priority_Seq.mm2
+./mork run --steps 3 Control_01_Priority_Seq.mm2
 ```
 
 Using the MORK CLI as we have so far, the ordering is deterministic. For each step amount, the writes will sequence in the expected way.  
@@ -68,17 +68,17 @@ Each exec will run if the patterns succeed:
 
 run for all steps in 0 to 3 inclusive
 ```sh
-./mork run --steps 0 Control_Exec_Chaining_Seq.mm2
-./mork run --steps 1 Control_Exec_Chaining_Seq.mm2
-./mork run --steps 2 Control_Exec_Chaining_Seq.mm2
-./mork run --steps 3 Control_Exec_Chaining_Seq.mm2
+./mork run --steps 0 Control_02_Exec_Chaining_Seq.mm2
+./mork run --steps 1 Control_02_Exec_Chaining_Seq.mm2
+./mork run --steps 2 Control_02_Exec_Chaining_Seq.mm2
+./mork run --steps 3 Control_02_Exec_Chaining_Seq.mm2
 ``` 
 
 This causes a sequencing. The exact method of generating an exec (by hardcoding, or matching a "definition") does not matter.
 
 In contrast to priorities, the ordering is _dependant_ on a previous exec successfully running.
 
-We can modify the code such that a spawned exec fails to match (in this case instead of it will fail to find `!`)
+We can modify the code such that a spawned exec fails to match (in this case instead of it will fail to find `!`).
 ```
 (exec 0 (, $x)
         (, 0
@@ -96,10 +96,10 @@ We can modify the code such that a spawned exec fails to match (in this case ins
         )
 )
 ```
-run for all steps in 0 to 1 inclusive
+run for all steps in 0 to 1 inclusive.
 ```sh
-./mork run --steps 0 Control_Exec_Chaining_Fail_Seq.mm2
-./mork run --steps 1 Control_Exec_Chaining_Fail_Seq.mm2
+./mork run --steps 0 Control_03_Exec_Chaining_Fail_Seq.mm2
+./mork run --steps 1 Control_03_Exec_Chaining_Fail_Seq.mm2
 ``` 
 The first exec will run, but the second one will fail, and disappear.
 
@@ -113,7 +113,7 @@ Execs have a built in means of selection via pattern matching.
 (exec 0 (, (case b)) (, b))
 (exec 0 (, (case c)) (, c))
 ```
-run `./mork run Control_Select_b_c.mm2`
+run `./mork run Control_04_Select_b_c.mm2`
 
 We can try to run all cases, and we select `(case b)` and `(case c)`.
 
@@ -127,11 +127,11 @@ The first is to remove the data that would be matched.
 (exec 0 (, (case b) (case $x)) (O (+ b) (- (case $x) )))
 (exec 0 (, (case c) (case $x)) (O (+ c) (- (case $x) )))
 ```
-run `./mork run Control_Select_First_Data.mm2`
+run `./mork run Control_05_Select_First_Data.mm2`
 
 outputs `b`
 
-The other would be to remove the execs that would match
+The other would be to remove the execs that would match.
 ```
 (case b)
 (case c)
@@ -142,11 +142,11 @@ The other would be to remove the execs that would match
 
 (exec 1 (, $x) (, (Ran After)))
 ```
-run `./mork run Control_Select_First_Exec.mm2`
+run `./mork run Control_06_Select_First_Exec.mm2`
 
 An extra exec has been added to show that we only removed execs of a given priority.
 
-outputs
+outputs:
 ```
 (Ran After)
 (case b)
@@ -156,13 +156,13 @@ b
 
 ## Iteration
 
-Making an infinite loop is not very hard, we just need the exec that keeps constructing itself
+Making an infinite loop is not very hard, we just need the exec that keeps constructing itself.
 ```
 (exec 0 (, (exec 0 $p $t) )
         (, (exec 0 $p $t) )
 )
 ```
-run `./mork run --steps 0 Control_Recursive.mm2`
+run `./mork run --steps 0 Control_07_Recursive.mm2`
 
 This exec unifies with itself ....
 ```
@@ -199,8 +199,9 @@ We do so below by decrementing a counter (here with Peano arithmetic).
            )
 )
 ```
-run `./mork run --steps 0 Control_Halts_on_fail.mm2`
-you should find this
+run `./mork run --steps 0 Control_08_Halts_on_fail.mm2`
+
+you should find this.
 ```
 (counter (S (S Z)))
 (exec LOOP (, (counter (S $a)) (exec LOOP $b $c)) (O (+ (exec 0 $b $c)) (+ (counter $a)) (- (counter (S $a)))))
@@ -209,16 +210,16 @@ the counter decremented by one Peano successor.
 
 Every time we sequence by chaining the exec, we modify the state such that we converge to failure.
 
-When the match fails at `(counter Z)`, the exec will be exhausted without making any writes, so it wont write itself back
+When the match fails at `(counter Z)`, the exec will be exhausted without making any writes, so it won't write itself back
 
-Another alternative is to spawn other execs with higher priority, and it would do the opposite, It would run every in an unbounded way, expecting one of the spawned execs to fail until it matches; that exec would then be responsible to remove the looping exec.
+Another alternative is to spawn other execs with higher priority, and it have one exec be responsible for termination. It would run every in an unbounded way, expecting one of the spawned execs to fail until it matches; that exec would then be responsible to remove the looping exec.
 
 Initialize the loop
 ```
 (counter (S (S (S Z))))
 (exec (LOOP 9) 
    (, (exec (LOOP 9) $p $t) )
-   (O ...things to spawn 
+   (O <...things to spawn> 
    )
 )
 ```
@@ -251,7 +252,7 @@ Low priority infinite loop:
 ```
 (+ (exec (LOOP 9) $p $t))
 ```
-run `./mork run Control_Halts_on_success.mm2`
+run `./mork run Control_09_Halts_on_success.mm2`
 
 ----
 
