@@ -43,7 +43,7 @@ If one wants to jump right in, head to [`structuring_code_00_Intro_and_Contents.
     - adding multiple inputs and output locations
     - running multiple instances of the same process type
     - clearing data at runtime to reduce memory overhead
-  - | [`structuring_code_08_Going_Wide_2_Programs.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_08_Going_Wide_2_Programs.md)
+  - | [`structuring_code_08_Going_Wide_Two_Programs.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_08_Going_Wide_Two_Programs.md)
     - define another recursive fold with another finite function
     - reusing the generic macro code for the new fold
     - modify the inputs to include the new data to evaluate in to the main loop
