@@ -1,7 +1,7 @@
 This tutorial aims to walk through how a program can be constructed in MM2, focusing on small examples and building up to a non trivial program. The program is then further modified to scale to larger more involved programming.
 
 # Tutorial Files
-All the files referenced in the tutorial are to be found in the folder `structuring_code/`
+All the files referenced in the tutorial are to be found in the folder [`structuring_code/`](https://github.com/ClarkeRemy/MM2_Structuring_Code/tree/main/structuring_code).
 
 The tutorial is expected to be read in the order written in this file.
 
