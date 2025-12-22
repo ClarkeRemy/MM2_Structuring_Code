@@ -5,7 +5,7 @@ All the files referenced in the tutorial are to be found in the folder [`structu
 
 The tutorial is expected to be read in the order written in this file.
 
-If one wants to jump right in, head to [`structuring_code_00_Intro_and_Contents.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_00_Intro_and_Contents.md)
+If one wants to jump right in, head to [`structuring_code_01_Setup.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_01_Setup.md).
 
 # Files in `structuring_code/`
 - ## `.md` tutorial text files
