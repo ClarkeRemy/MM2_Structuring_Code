@@ -105,4 +105,4 @@ It's worthwhile to see how the program evolves.
 
 ----
 
-Next we see if we can scale this program to more inputs in [`structuring_code_06_Going_Wide_Macros.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_06_Going_Wide_Macros.md).
+Next we see if we can scale this program to more inputs in [`structuring_code_07_Going_Wide_Larger_Programs.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_07_Going_Wide_Larger_Programs.md).
