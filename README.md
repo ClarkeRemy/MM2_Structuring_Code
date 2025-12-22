@@ -134,10 +134,10 @@ If one wants to jump right in, head to [`structuring_code_00_Intro_and_Contents.
   - Going Wide
     - [`Going_Wide_01_Finite_Function.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_01_Finite_Function.mm2)
       - Testing the truth tables for our `eval` of booleans.
-    - | `Going_Wide_02.mm2`
+    - | [`Going_Wide_02.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_02.mm2)
       - A program that takes a recursive expression, splits it into paths, then evaluates with by joining results with a finite function
     - | [`Going_Wide_11_Macros.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_11_Macros.mm2)
-      - A modified `Going_Wide_03.mm2` by using using partial evaluation to allow the forks and joins to be generic, but specialize them before the main loop.
+      - A modified [`Going_Wide_03.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_03.mm2) by using using partial evaluation to allow the forks and joins to be generic, but specialize them before the main loop.
     - | [`Going_Wide_21_Larger_Programs.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_21_Larger_Programs.mm2)
       - A modified [`Going_Wide_11_Macros.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_11_Macros.mm2) to support multiple inputs and to use less memory.
     - | [`Going_Wide_31_Two_Programs.mm2`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/mm2_programs/Going_Wide_31_Two_Programs.mm2)
