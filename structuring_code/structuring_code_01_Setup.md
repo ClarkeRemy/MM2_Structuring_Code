@@ -58,4 +58,4 @@ __Note__ : It actually ran _one_ step with the `--steps 0`
 
 ----
 
-Next, basics are introduced `structuring_code_02_Basics.md`.
+Next, basics are introduced [`structuring_code_02_Basics.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_02_Basics.md).

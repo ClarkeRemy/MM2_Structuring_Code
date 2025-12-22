@@ -81,5 +81,5 @@ This time focus on how the program is cleaning up after itself mid execution.
 
 ----
 
-Next we will process two similar processes at the same time in `structuring_code_08_Going_Wide_Two_Programs.md`.
+Next we will process two similar processes at the same time in [`structuring_code_08_Going_Wide_Two_Programs.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_08_Going_Wide_Two_Programs.md).
 

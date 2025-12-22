@@ -261,4 +261,4 @@ If one is interested in some of the considerations about that, have a look at th
 
 ----
 
-Next we start building a more involved program in `structuring_code_05_Going_Wide.md`.
+Next we start building a more involved program in [`structuring_code_05_Going_Wide.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_05_Going_Wide.md).

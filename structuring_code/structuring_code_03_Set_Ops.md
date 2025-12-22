@@ -317,4 +317,4 @@ More sophisticated actions are usually subtle variations of these examples above
 
 ----
 
-Next we start building a more involved program in `structuring_code_04_Control.md`.
+Next we start building a more involved program in [`structuring_code_04_Control.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_04_Control.md).

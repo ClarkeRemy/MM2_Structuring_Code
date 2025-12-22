@@ -86,4 +86,4 @@ Consider the following :
 
 ----
 
-The main tutorial ends here. There is an extra section for curious Rust programmers interested in playing around with internals here : `structuring_code_10_Rust_Extra`.
+The main tutorial ends here. There is an extra section for curious Rust programmers interested in playing around with internals here : [`structuring_code_10_Rust_Extra.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_10_Rust_Extra.md).

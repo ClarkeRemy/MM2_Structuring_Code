@@ -421,4 +421,4 @@ Looking at the result we should find
 
 ----
 
-Next we generalize for and join with partial evaluation in `structuring_code_06_Going_Wide.md`.
+Next we generalize for and join with partial evaluation in [`structuring_code_06_Going_Wide_Macros.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_06_Going_Wide_Macros.md).

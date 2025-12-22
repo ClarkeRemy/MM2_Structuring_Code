@@ -4,7 +4,7 @@
 This section should only be done by people a little comfortable with Rust, that want to experiment with internals.  
 At the current time some features are only possible with the `main` branch.
 
-There is a binary crate `mork_playground` in the at `structuring_code/mork_playground`; 
+There is a binary crate `mork_playground` in the at [`structuring_code/mork_playground`](https://github.com/ClarkeRemy/MM2_Structuring_Code/tree/main/structuring_code/mork_playground); 
 it includes an import of a file, optional tracing, and a final file export.
 
 One can place the crate into the MORK workspace and build the crate.
@@ -24,7 +24,7 @@ For mor information on the internal representation, see [Data in MORK](https://g
 The expr syntax is only for imports and exports in this tutorial.
 I've added basic tracing support to the above rust code where the syntax is also used.
 
-To run the code examples with `structuring_code/mork_playground`, simply add a file named `Input.mm2` into the folder and run the binary.
+To run the code examples with [`structuring_code/mork_playground`](https://github.com/ClarkeRemy/MM2_Structuring_Code/tree/main/structuring_code/mork_playground), simply add a file named `Input.mm2` into the folder and run the binary.
 in the folder with `cargo run --release` (with a nightly compiler)
 
 ----

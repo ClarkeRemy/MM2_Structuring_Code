@@ -101,4 +101,4 @@ The tree was successfully flipped. The other expressions evaluated.
 
 ----
 
-Next we take stock in `structuring_code_In_Closing.md`.
+Next we take stock in [`structuring_code_09_In_Closing.md`](https://github.com/ClarkeRemy/MM2_Structuring_Code/blob/main/structuring_code/structuring_code_09_In_Closing.md).
